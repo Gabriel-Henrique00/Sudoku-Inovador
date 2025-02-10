@@ -1,0 +1,113 @@
+.sudoku-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.dificuldade-container {
+    margin: 10px;
+}
+
+.raiz {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px;
+}
+
+.linha {
+    display: flex;
+}
+
+.caixa {
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    margin: 2px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    border: 1px solid #ddd;
+}
+
+.caixa.quadrante1 { background-color: #f9f9f9; }
+.caixa.quadrante2 { background-color: #f1f1f1; }
+.caixa.quadrante3 { background-color: #e9e9e9; }
+
+.timer {
+    font-size: 1.5rem;
+    margin: 10px;
+    color:rgb(160, 0, 185) ;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.mensagem {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.mensagem-correta {
+    color: green;
+}
+
+.mensagem-incorreta {
+    color: red;
+}
+
+.tela-vermelha, .tela-verde {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(255, 0, 0, 0.8);
+    color: white;
+    font-size: 2rem;
+    z-index: 999;
+}
+
+.tela-verde {
+    background-color: rgba(0, 255, 0, 0.8);
+}
+
+.visivel {
+    display: flex;
+}
+
+.jumpscare {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    object-fit: contain;
+    z-index: 9999;
+    pointer-events: none;
+}
+
+.sudoku-container .preenchido {
+    background-color: #808080;
+    color: #000;
+    font-weight: bold;
+    cursor: not-allowed;
+}
+
+/* Estilos específicos para os quadrantes de 3x3 */
+.linha:nth-child(3n) .caixa {
+    border-bottom: 1px solid rgb(160, 0, 185);
+}
+
+.linha:nth-child(3n + 1) .caixa {
+    border-top: 1px solid rgb(160, 0, 185);
+}
+
+.linha .caixa:nth-child(3n) {
+    border-right: 1px solid rgb(160, 0, 185);
+}
+
+.linha .caixa:nth-child(3n + 1) {
+    border-left: 1px solid rgb(160, 0, 185);
+}
